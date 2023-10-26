@@ -1,11 +1,15 @@
-import PropTypes from 'prop-types'
-import { badgeVariants } from '@/components/ui/badge'
-import { useNavigate } from 'react-router-dom'
+import PropTypes from "prop-types";
+import { badgeVariants } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
+
+import { AiTwotoneStar } from "react-icons/ai";
+import { Fragment } from "react";
 
 function Card({
   bookName,
   originalPrice,
   author,
+  rating,
   discountedPrice,
   imgSrc,
   imgAlt,
@@ -13,23 +17,23 @@ function Card({
   discountPercent,
   _id,
   genre,
-  isLiked,
   handleLikeBtnClick,
+  isLiked,
 }) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleClick = (e) => {
-    e.stopPropagation()
-    handleLikeBtnClick(_id)
-  }
+    e.stopPropagation();
+    handleLikeBtnClick(_id);
+  };
   return (
     <div
-      className='w-[220px]  border border-gray-500  cursor-pointer p-1 text-center relative'
-      onClick={() => navigate('/product/' + _id)}
+      className="w-[220px]  border border-gray-500  cursor-pointer  text-center relative"
+      onClick={() => navigate("/product/" + _id)}
     >
       <span
         className={`${badgeVariants({
-          variant: 'destructive',
+          variant: "destructive",
         })} absolute top-0 left-0 rounded-none`}
       >
         {badgeText}
@@ -37,28 +41,45 @@ function Card({
       <span
         onClick={handleClick}
         className={`${badgeVariants({
-          variant: 'destructive',
-        })} absolute top-0 right-0 rounded-none`}
+          variant: "destructive",
+        })} absolute top-0 right-0 rounded-none bg-transparent hover:bg-transparent`}
       >
-        {!isLiked ? '❤️' : '🤍'}
+        {!isLiked ? (
+          <i className="fa-solid fa-heart text-red-600"></i>
+        ) : (
+          <i className="fa-regular fa-heart text-gray-500"></i>
+        )}
       </span>
       <img
         src={imgSrc}
         alt={imgAlt}
-        className='w-[150px] mx-auto mt-2 h-[200px] object-contain'
+        className="w-[150px] mx-auto mt-2 h-[200px] object-contain"
       />
       <h3>{bookName}</h3>
-      <span className='my-4 inline-block'>by {author}</span>
-      <div className='flex justify-between items-center'>
+      <span className="my-4 inline-block">by {author}</span>
+      <div className="flex justify-between items-center">
         <p>R.S {discountedPrice}</p>
         <del>R.S {originalPrice}</del>
-        <span className='text-red-500 text-[12px]'>({discountPercent}%)</span>
+        <span className="text-red-500 text-[12px]">({discountPercent}%)</span>
       </div>
-      <span>{genre}</span>
+      <div className="flex items-center gap-2 justify-center">
+        <h3>Rating:</h3>
+        <div className="flex items-center ">
+          {Array.from({ length: rating }, (_, index) => {
+            return (
+              <Fragment key={index}>
+                <span className="text-yellow-400">
+                  <AiTwotoneStar />
+                </span>
+              </Fragment>
+            );
+          })}
+        </div>
+      </div>
     </div>
-  )
+  );
 }
-export default Card
+export default Card;
 
 Card.propTypes = {
   bookName: PropTypes.string,
@@ -73,4 +94,5 @@ Card.propTypes = {
   genre: PropTypes.string,
   isLiked: PropTypes.any,
   handleLikeBtnClick: PropTypes.func,
-}
+  rating: PropTypes.number,
+};
