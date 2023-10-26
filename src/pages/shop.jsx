@@ -121,8 +121,8 @@ function Shop({
   };
 
   return (
-    <div className="flex justify-between border-2 border-indigo-600">
-      <div className="border-2 border-green-600 mr-15 w-[275px] p-4">
+    <div className="flex justify-between border-2 border-black-600">
+      <div className="border-r-2 mr-15 w-[275px] p-4">
         <Button onClick={onClear} className="mb-5">
           Clear Filter
         </Button>
@@ -136,8 +136,6 @@ function Shop({
                 type="number"
                 min={0}
                 value={range[sliderValues?.min]}
-                // onChange={handleInputrangeChangeX}
-                // max={sliderValues?.max}
               />
             </label>
             -
@@ -148,7 +146,6 @@ function Shop({
                 type="number"
                 min={0}
                 value={range[sliderValues?.max]}
-                // max={sliderValues?.max}
               />
             </label>
           </div>
@@ -183,8 +180,8 @@ function Shop({
             </div>
           ))}
         </div>
-        <div className="ml-6 mt-4">
-          <Label htmlFor="r1" className="underline">
+        <div className="ml-6 mt-5">
+          <Label htmlFor="r1" className="underline text-xl">
             Sort By
           </Label>
           <RadioGroup defaultValue="comfortable" className="mt-2">
@@ -198,7 +195,7 @@ function Shop({
             </div>
           </RadioGroup>
         </div>
-        <div className="mt-6 flex flex-col gap-4">
+        <div className="mt-6 flex flex-col gap-2 ml-6" >
           <label className="flex item-center gap-2">
             <input
               type="radio"
@@ -246,7 +243,7 @@ function Shop({
         </div>
       </div>
 
-      <div className="flex w-[1000px] gap-6 justify-between mt-8  flex-wrap ml-8 border-2 border-red-600">
+      <div className="flex w-[1000px] gap-6 justify-between mt-8  flex-wrap ml-8 ">
         {filteredProducts.length ? (
           filteredProducts.map((product) => (
             <Card

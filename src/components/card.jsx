@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { badgeVariants } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
-
 import { AiTwotoneStar } from "react-icons/ai";
 import { Fragment } from "react";
 
@@ -45,9 +44,9 @@ function Card({
         })} absolute top-0 right-0 rounded-none bg-transparent hover:bg-transparent`}
       >
         {!isLiked ? (
-          <i className="fa-solid fa-heart text-red-600"></i>
+          <i className="fa-solid fa-heart text-red-600 text-xl"></i>
         ) : (
-          <i className="fa-regular fa-heart text-gray-500"></i>
+          <i className="fa-regular fa-heart text-gray-500 text-xl"></i>
         )}
       </span>
       <img
@@ -56,12 +55,15 @@ function Card({
         className="w-[150px] mx-auto mt-2 h-[200px] object-contain"
       />
       <h3>{bookName}</h3>
+
       <span className="my-4 inline-block">by {author}</span>
+
       <div className="flex justify-between items-center">
         <p>R.S {discountedPrice}</p>
         <del>R.S {originalPrice}</del>
         <span className="text-red-500 text-[12px]">({discountPercent}%)</span>
       </div>
+      
       <div className="flex items-center gap-2 justify-center">
         <h3>Rating:</h3>
         <div className="flex items-center ">
@@ -76,6 +78,8 @@ function Card({
           })}
         </div>
       </div>
+
+
     </div>
   );
 }
