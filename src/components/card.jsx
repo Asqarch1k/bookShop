@@ -27,7 +27,7 @@ function Card({
   };
   return (
     <div
-      className="w-[220px]  border border-gray-500  cursor-pointer  text-center relative"
+      className="w-[220px]  border border-gray-500  cursor-pointer  text-center relative box-shadow: 0 0 25px 6px rgb(172, 172, 172);"
       onClick={() => navigate("/product/" + _id)}
     >
       <span
@@ -63,7 +63,7 @@ function Card({
         <del>R.S {originalPrice}</del>
         <span className="text-red-500 text-[12px]">({discountPercent}%)</span>
       </div>
-      
+
       <div className="flex items-center gap-2 justify-center">
         <h3>Rating:</h3>
         <div className="flex items-center ">
@@ -78,8 +78,6 @@ function Card({
           })}
         </div>
       </div>
-
-
     </div>
   );
 }

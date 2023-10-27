@@ -135,7 +135,7 @@ function Shop({
                 className="border-2 w-16"
                 type="number"
                 min={0}
-                value={range[sliderValues?.min]}
+                value={range[0]}
               />
             </label>
             -
@@ -144,8 +144,8 @@ function Shop({
               <input
                 className="border-2 w-16"
                 type="number"
-                min={0}
-                value={range[sliderValues?.max]}
+                max={1000}
+                value={range[1]}
               />
             </label>
           </div>
@@ -195,7 +195,7 @@ function Shop({
             </div>
           </RadioGroup>
         </div>
-        <div className="mt-6 flex flex-col gap-2 ml-6" >
+        <div className="mt-6 flex flex-col gap-2 ml-6">
           <label className="flex item-center gap-2">
             <input
               type="radio"

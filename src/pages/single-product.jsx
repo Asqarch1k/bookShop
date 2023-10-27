@@ -3,9 +3,9 @@ import { badgeVariants } from "@/components/ui/badge";
 import { useEffect, useState } from "react";
 import { AiTwotoneStar } from "react-icons/ai";
 import { Fragment } from "react";
-import { Button } from "@/components/ui/button"; 
+import { Button } from "@/components/ui/button";
 
-function SingleProduct({ products, isLiked, rating }) {
+function SingleProduct({ products, rating }) {
   const { productID } = useParams();
   const [productInfo, setProductInfo] = useState({});
   useEffect(() => {
@@ -30,7 +30,7 @@ function SingleProduct({ products, isLiked, rating }) {
           <span className="my-4 inline-block text-2xl">
             Author: {productInfo?.author}
           </span>
-          <div className="flex justify-between items-center">
+          <div className="flex gap-6 items-center">
             <p className="text-xl">R.S {productInfo?.discountedPrice}</p>
             <del className="text-xl">R.S {productInfo?.originalPrice}</del>
             <span className="text-red-500 text-[12px] text-xl">

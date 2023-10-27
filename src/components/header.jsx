@@ -9,7 +9,7 @@ function Header({ isLogged, setIsLogged }) {
   };
   return (
     <header className="flex justify-between py-6 px-2  border-b-2">
-      <Link to={"/"}>Book</Link>
+      <Link to={"/"} className="text-4xl">Book</Link>
       <div className="gap-3">
         {isLogged ? (
           <>
