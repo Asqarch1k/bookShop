@@ -9,7 +9,7 @@ import Shop from "./pages/shop.jsx";
 import WishList from "./pages/wishlist.jsx";
 import { instance } from "./utils/use-request.js";
 import Login from "./pages/login.jsx";
-import img from '../images/Library_Illustration_1.c54dafea582d6757c53e.jpg'
+import CartPage from "./pages/cartPage.jsx";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -54,7 +54,7 @@ function App() {
     <BrowserRouter>
       <Layout>
         <Header isLogged={isLogged} setIsLogged={setIsLogged} />
-        <h1><img src={img} alt="" /></h1>
+
         <Routes>
           <Route
             path="/"
@@ -67,6 +67,7 @@ function App() {
               />
             }
           />
+
           <Route
             path="/shop"
             element={
@@ -89,6 +90,7 @@ function App() {
             element={<WishList wishList={wishList} setWishList={setWishList} />}
           />
           <Route path="/login" element={<Login setIsLogged={setIsLogged} />} />
+          <Route path="/cart" element={<CartPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>

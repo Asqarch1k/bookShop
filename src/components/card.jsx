@@ -15,7 +15,6 @@ function Card({
   badgeText,
   discountPercent,
   _id,
-  genre,
   handleLikeBtnClick,
   isLiked,
 }) {

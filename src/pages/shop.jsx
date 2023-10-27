@@ -27,11 +27,6 @@ function Shop({
     setRange(value);
   };
 
-  // =============================
-  // const handleInputrangeChangeX = (value) => {
-  //   console.log(value);
-  // };
-  // =================
 
   useEffect(() => {
     if (!selectedGenres.length) {

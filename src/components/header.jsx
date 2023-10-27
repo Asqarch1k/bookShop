@@ -22,7 +22,7 @@ function Header({ isLogged, setIsLogged }) {
             >
               <i className="fa-regular fa-heart"></i>
             </Link>
-            <Link to={"/"} className="rounded-full bg-blue-400 p-2 mr-2">
+            <Link to={"/cart"} className="rounded-full bg-blue-400 p-2 mr-2">
               <i className="fa-solid fa-cart-shopping"></i>
             </Link>
             <Link to={"/"} className="rounded-full bg-blue-400 p-2 mr-2">

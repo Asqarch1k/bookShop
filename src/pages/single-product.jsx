@@ -5,7 +5,7 @@ import { AiTwotoneStar } from "react-icons/ai";
 import { Fragment } from "react";
 import { Button } from "@/components/ui/button";
 
-function SingleProduct({ products, rating }) {
+function SingleProduct({ products, rating, handleLikeBtnClick }) {
   const { productID } = useParams();
   const [productInfo, setProductInfo] = useState({});
   useEffect(() => {
@@ -55,7 +55,13 @@ function SingleProduct({ products, rating }) {
             </div>
           </div>
           <div className="flex gap-7">
-            <Button>Add to wishlist</Button>
+            <Button
+              onClick={() => {
+                handleLikeBtnClick(productInfo._id);
+              }}
+            >
+              Add to wishlist
+            </Button>
             <Button>Add to card</Button>
           </div>
         </div>
