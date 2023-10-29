@@ -116,8 +116,8 @@ function Shop({
   };
 
   return (
-    <div className="flex justify-between border-2 border-black-600">
-      <div className="border-r-2 mr-15 w-[275px] p-4">
+    <div className="flex justify-between  border-black-600">
+      <div className="border-r-2 mr-15 w-[400px] p-4">
         <Button onClick={onClear} className="mb-5">
           Clear Filter
         </Button>
@@ -152,7 +152,7 @@ function Shop({
             value={range}
             onValueChange={handleRangeChange}
             formatLabel={(value) => `${value} `}
-            className="w-[210px] mt-6"
+            className="w-[250px] mt-6"
           />
         </div>
         <div className="mt-10 ml-6  ">

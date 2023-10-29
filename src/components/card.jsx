@@ -26,7 +26,7 @@ function Card({
   };
   return (
     <div
-      className="w-[220px]  border border-gray-500  cursor-pointer  text-center relative box-shadow: 0 0 25px 6px rgb(172, 172, 172);"
+      className="transition-all w-[250px] px-4  border border-gray-200 cursor-pointer p-1 text-center relative hover:shadow-2xl hover:scale-105"
       onClick={() => navigate("/product/" + _id)}
     >
       <span

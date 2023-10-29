@@ -40,8 +40,8 @@ function SingleProduct({ products, rating, handleLikeBtnClick }) {
 
           <span className="text-xl">Ganre: {productInfo?.genre}</span>
 
-          <div className="flex items-center gap-2 justify-center">
-            <h3>Rating:</h3>
+          <div className="flex items-center gap-2">
+            <span className="text-xl">Rating: {productInfo?.rating}</span>
             <div className="flex items-center ">
               {Array.from({ length: rating }, (_, index) => {
                 return (
@@ -54,16 +54,15 @@ function SingleProduct({ products, rating, handleLikeBtnClick }) {
               })}
             </div>
           </div>
-          <div className="flex gap-7">
+          {/* <div className="flex gap-7">
             <Button
               onClick={() => {
-                handleLikeBtnClick(productInfo._id);
+                handleLikeBtnClick(productInfo[0]._id);
               }}
             >
               Add to wishlist
             </Button>
-            <Button>Add to card</Button>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
